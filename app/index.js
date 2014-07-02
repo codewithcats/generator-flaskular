@@ -62,8 +62,8 @@ var FlaskularGenerator = yeoman.generators.Base.extend({
   },
 
   writing: function () {
-    this.copy('_package.json', 'package.json');
-    this.copy('_bower.json', 'bower.json');
+    this.template('_package.json', 'package.json');
+    this.template('_bower.json', 'bower.json');
     this.copy('_requirements.txt', 'requirements.txt');
   }
 
