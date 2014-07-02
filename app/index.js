@@ -28,13 +28,28 @@ var FlaskularGenerator = yeoman.generators.Base.extend({
 
     var prompts = [{
       type: 'input',
-      name: 'appNae',
+      name: 'appName',
       message: 'Please tell me your project name?',
-      default: 'awesome-app'
+      default: 'Awesome App'
+    }, {
+      type: 'input',
+      name: 'appDescription',
+      message: 'Give me your project description'
+    }, {
+      type: 'input',
+      name: 'authorName',
+      message: 'Who are you?'
+    }, {
+      type: 'input',
+      name: 'appRepository',
+      message: 'Where is a project repository?'
     }];
 
     this.prompt(prompts, function (props) {
       this.appName = props.appName;
+      this.appDescription = props.appDescription;
+      this.authorName = props.authorName;
+      this.appRepository = props.appRepository;
 
       done();
     }.bind(this));
