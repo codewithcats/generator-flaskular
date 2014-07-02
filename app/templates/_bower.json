@@ -1,6 +1,21 @@
 {
-  "name": "package",
-  "version": "0.0.0",
-  "dependencies": {}
+  "name": "<%= _.slugify(appName) %>",
+  "version": "<%= appVersion %>",
+  "description": "<%= appDescription %>",
+  "authors": [
+    "<%= authorName %>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.18",
+    "flat-ui-official": "~2.1.3",
+    "bootstrap": "~3.1.1"
+  }
 }
-

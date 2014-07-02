@@ -50,6 +50,7 @@ var FlaskularGenerator = yeoman.generators.Base.extend({
       this.appDescription = props.appDescription;
       this.authorName = props.authorName;
       this.appRepository = props.appRepository;
+      this.appVersion = '0.1.0';
 
       done();
     }.bind(this));
@@ -58,6 +59,7 @@ var FlaskularGenerator = yeoman.generators.Base.extend({
   configuring: function () {
     this.copy('editorconfig', '.editorconfig');
     this.copy('jshintrc', '.jshintrc');
+    this.copy('gitignore', '.gitignore');
   },
 
   writing: function () {

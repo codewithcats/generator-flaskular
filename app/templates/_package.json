@@ -1,6 +1,6 @@
 {
   "name": "<%= _.slugify(appName) %>",
-  "version": "0.1.0",
+  "version": "<%= appVersion %>",
   "description": "<%= appDescription %>",
   "author": "<%= authorName %>",
   "repository": "<%= appRepository %>",
