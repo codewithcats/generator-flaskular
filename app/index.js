@@ -7,6 +7,9 @@ var chalk = require('chalk');
 
 
 var FlaskularGenerator = yeoman.generators.Base.extend({
+  constructor: function() {
+    yeoman.generators.Base.apply(this, arguments);
+  },
   initializing: function () {
     this.pkg = require('../package.json');
 
