@@ -58,7 +58,6 @@ var FlaskularGenerator = yeoman.generators.Base.extend({
 
   configuring: function () {
     this.copy('editorconfig', '.editorconfig');
-    this.copy('jshintrc', '.jshintrc');
     this.copy('gitignore', '.gitignore');
   },
 
