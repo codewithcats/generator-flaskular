@@ -27,14 +27,14 @@ var FlaskularGenerator = yeoman.generators.Base.extend({
     this.log(yosay('Welcome to the marvelous Flaskular generator!'));
 
     var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
+      type: 'input',
+      name: 'appNae',
+      message: 'Please tell me your project name?',
+      default: 'awesome-app'
     }];
 
     this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
+      this.appName = props.appName;
 
       done();
     }.bind(this));
