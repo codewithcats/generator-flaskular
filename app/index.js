@@ -4,6 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
+var _s = require('underscore.string');
 
 
 var FlaskularGenerator = yeoman.generators.Base.extend({
@@ -65,6 +66,8 @@ var FlaskularGenerator = yeoman.generators.Base.extend({
     this.template('_package.json', 'package.json');
     this.template('_bower.json', 'bower.json');
     this.copy('_requirements.txt', 'requirements.txt');
+
+    this.mkdir(_s.slugify(this.appName));
   }
 
 });
