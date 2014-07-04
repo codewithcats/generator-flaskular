@@ -52,7 +52,7 @@ var FlaskularGenerator = yeoman.generators.Base.extend({
     this.copy('_bower.json', 'bower.json');
     this.copy('_requirements.txt', 'requirements.txt');
 
-    this.mkdir(_s.slugify(this.appName));
+    this.directory('app', _s.slugify(this.appName));
   }
 
 });
