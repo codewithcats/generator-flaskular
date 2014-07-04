@@ -52,6 +52,7 @@ var FlaskularGenerator = yeoman.generators.Base.extend({
     this.copy('_bower.json', 'bower.json');
     this.copy('requirements.txt', 'requirements.txt');
     this.copy('Gruntfile.js', 'Gruntfile.js');
+    this.copy('README.md', 'README.md');
 
     this.directory('app', _s.slugify(this.appName));
   }
