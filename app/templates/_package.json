@@ -1,9 +1,9 @@
 {
   "name": "<%= _.slugify(appName) %>",
   "version": "<%= appVersion %>",
-  "description": "<%= appDescription %>",
-  "author": "<%= authorName %>",
-  "repository": "<%= appRepository %>",
+  "description": "",
+  "author": "",
+  "repository": "",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.5.0",

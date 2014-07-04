@@ -32,25 +32,10 @@ var FlaskularGenerator = yeoman.generators.Base.extend({
       name: 'appName',
       message: 'Please tell me your project name?',
       default: 'Awesome App'
-    }, {
-      type: 'input',
-      name: 'appDescription',
-      message: 'Give me your project description'
-    }, {
-      type: 'input',
-      name: 'authorName',
-      message: 'Who are you?'
-    }, {
-      type: 'input',
-      name: 'appRepository',
-      message: 'Where is a project repository?'
     }];
 
     this.prompt(prompts, function (props) {
       this.appName = props.appName;
-      this.appDescription = props.appDescription;
-      this.authorName = props.authorName;
-      this.appRepository = props.appRepository;
       this.appVersion = '0.1.0';
 
       done();
@@ -63,8 +48,8 @@ var FlaskularGenerator = yeoman.generators.Base.extend({
   },
 
   writing: function () {
-    this.template('_package.json', 'package.json');
-    this.template('_bower.json', 'bower.json');
+    this.copy('_package.json', 'package.json');
+    this.copy('_bower.json', 'bower.json');
     this.copy('_requirements.txt', 'requirements.txt');
 
     this.mkdir(_s.slugify(this.appName));
