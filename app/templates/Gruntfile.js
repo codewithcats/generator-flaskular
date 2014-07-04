@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.config('clean', {
-        'js': ['eidos-bs/static/js/'],
-        'css': ['eidos-bs/static/css/']
+        'js': ['<%= _.slugify(appName) %>/static/js/'],
+        'css': ['<%= _.slugify(appName) %>/static/css/']
     });
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.config('copy', {
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
                         'bower_components/angular/angular.min.js.map',
                         'bower_components/lodash/dist/lodash.min.js'
                     ],
-                    dest: 'eidos-bs/static/js/lib/',
+                    dest: '<%= _.slugify(appName) %>/static/js/lib/',
                     flatten: true
                 }
             ]
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
                         'bower_components/bootstrap/dist/css/bootstrap.css.map',
                         'bower_components/flat-ui-official/css/flat-ui.css'
                     ],
-                    dest: 'eidos-bs/static/css/lib/',
+                    dest: '<%= _.slugify(appName) %>/static/css/lib/',
                     flatten: true
                 }
             ]
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
                     src: [
                         '**/*'
                     ],
-                    dest: 'eidos-bs/static/css/fonts'
+                    dest: '<%= _.slugify(appName) %>/static/css/fonts'
                 }
             ]
         }
@@ -54,9 +54,9 @@ module.exports = function(grunt) {
                 join: true
             },
             files: {
-                'eidos-bs/static/js/app.js': [
-                    'eidos-bs/static/coffee/modules.coffee',
-                    'eidos-bs/static/coffee/**/*.coffee'
+                '<%= _.slugify(appName) %>/static/js/app.js': [
+                    '<%= _.slugify(appName) %>/static/coffee/modules.coffee',
+                    '<%= _.slugify(appName) %>/static/coffee/**/*.coffee'
                 ]
             }
         }
@@ -65,10 +65,10 @@ module.exports = function(grunt) {
     grunt.config('less', {
         'app': {
             options: {
-                paths: ['eidos-bs/static/less/']
+                paths: ['<%= _.slugify(appName) %>/static/less/']
             },
             files: {
-                'eidos-bs/static/css/app.css': 'eidos-bs/static/less/app.less'
+                '<%= _.slugify(appName) %>/static/css/app.css': '<%= _.slugify(appName) %>/static/less/app.less'
             }
         }
     });
@@ -76,21 +76,21 @@ module.exports = function(grunt) {
     grunt.config('watch', {
         'coffee': {
             files: [
-                'eidos-bs/static/coffee/**/*.coffee'
+                '<%= _.slugify(appName) %>/static/coffee/**/*.coffee'
             ],
             tasks: ['clean:js', 'coffee:app', 'copy:js-lib']
         },
         'less': {
             files: [
-                'eidos-bs/static/less/**/*.less'
+                '<%= _.slugify(appName) %>/static/less/**/*.less'
             ],
             tasks: ['less:app']
         },
         'live': {
             files: [
-                'eidos-bs/static/js/app.js',
-                'eidos-bs/static/css/app.css',
-                'eidos-bs/templates/**/*.html'
+                '<%= _.slugify(appName) %>/static/js/app.js',
+                '<%= _.slugify(appName) %>/static/css/app.css',
+                '<%= _.slugify(appName) %>/templates/**/*.html'
             ],
             options: {
                 livereload: true
