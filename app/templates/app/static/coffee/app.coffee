@@ -1,0 +1,1 @@
+<%= _.camelize(_.slugify(appName)) %> = angular.module('<%= _.camelize(_.slugify(appName)) %>', [])

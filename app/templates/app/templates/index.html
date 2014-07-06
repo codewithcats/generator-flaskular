@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html ng-app="eidosBs">
+<html ng-app="<%= _.camelize(_.slugify(appName)) %>">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Eidos BS</title>
+    <title><%= appName %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/flat-ui.css') }}">
