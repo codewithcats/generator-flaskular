@@ -19,13 +19,17 @@ describe('flaskular generator', function () {
 
   it('creates expected files', function (done) {
     var expected = [
-      // add files you expect to exist here.
-      '.jshintrc',
-      '.editorconfig'
+      '.editorconfig',
+      'bower.json',
+      'package.json',
+      '.gitignore',
+      'Gruntfile.js',
+      'README.md',
+      'requirements.txt'
     ];
 
     helpers.mockPrompt(this.app, {
-      'someOption': true
+      'appName': true
     });
     this.app.options['skip-install'] = true;
     this.app.run({}, function () {
